@@ -64,16 +64,16 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <AniLink className="navbar-item" to="/about">
+              <AniLink paintDrip duration={0.5} className="navbar-item" to="/about">
                 About
               </AniLink>
-              <AniLink className="navbar-item" to="/blog">
+              <AniLink paintDrip duration={0.5} className="navbar-item" to="/blog">
                 Blog
               </AniLink>
-              <AniLink className="navbar-item" to="/contact">
+              <AniLink paintDrip duration={0.5} className="navbar-item" to="/contact">
                 Contact
               </AniLink>
-              <AniLink className="navbar-item" to="/contact/examples">
+              <AniLink paintDrip duration={0.5} className="navbar-item" to="/contact/examples">
                 Form Examples
               </AniLink>
             </div>
