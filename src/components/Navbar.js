@@ -42,7 +42,7 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <AniLink to="/" className="navbar-item" title="Logo">
+            <AniLink paintDrip duration={0.5} hex="fff5db" to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
             </AniLink>
             {/* Hamburger menu */}
@@ -64,16 +64,16 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <AniLink paintDrip duration={0.5} className="navbar-item" to="/about">
+              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/about">
                 About
               </AniLink>
-              <AniLink paintDrip duration={0.5} className="navbar-item" to="/blog">
+              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/blog">
                 Blog
               </AniLink>
-              <AniLink paintDrip duration={0.5} className="navbar-item" to="/contact">
+              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/contact">
                 Contact
               </AniLink>
-              <AniLink paintDrip duration={0.5} className="navbar-item" to="/contact/examples">
+              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/contact/examples">
                 Form Examples
               </AniLink>
             </div>
