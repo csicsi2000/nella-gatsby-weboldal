@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+// import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -42,9 +42,14 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <AniLink paintDrip duration={0.5} hex="fff5db" to="/" className="navbar-item" title="Logo">
+            {
+            /* <AniLink paintDrip duration={0.5} hex="fff5db" to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </AniLink>
+            </AniLink> */
+            }
+            <Link to="/" className="navbar-item" title="Logo">
+              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+            </Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -64,18 +69,18 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/about">
                 About
-              </AniLink>
-              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/blog">
+              </Link>
+              <Link className="navbar-item" to="/blog">
                 Blog
-              </AniLink>
-              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/contact">
+              </Link>
+              <Link className="navbar-item" to="/contact">
                 Contact
-              </AniLink>
-              <AniLink paintDrip duration={0.5} hex="fff5db" className="navbar-item" to="/contact/examples">
+              </Link>
+              <Link className="navbar-item" to="/contact/examples">
                 Form Examples
-              </AniLink>
+              </Link>
             </div>
             <div className="navbar-end has-text-centered">
               <a
