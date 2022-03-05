@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -41,9 +42,9 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <AniLink to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </Link>
+            </AniLink>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -63,18 +64,18 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
+              <AniLink className="navbar-item" to="/about">
                 About
-              </Link>
-              <Link className="navbar-item" to="/blog">
+              </AniLink>
+              <AniLink className="navbar-item" to="/blog">
                 Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
+              </AniLink>
+              <AniLink className="navbar-item" to="/contact">
                 Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              </AniLink>
+              <AniLink className="navbar-item" to="/contact/examples">
                 Form Examples
-              </Link>
+              </AniLink>
             </div>
             <div className="navbar-end has-text-centered">
               <a
