@@ -1,0 +1,48 @@
+body {
+    --transition-speed: 0.5s;
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+    transition: var(--transition-speed);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    background-color: var(--background) !important;
+    transition: var(--transition-speed);
+    color: var(--text) !important;
+}
+
+a {
+    transition: var(--transition-speed);
+    color: var(--link) !important;
+}
+
+a:hover {
+    color: var(--link) !important;
+}
+
+.navbar-menu {
+    background-color: transparent !important;
+}
+
+.navbar {
+    background-color: var(--theme) !important;
+    transition: var(--transition-speed);
+}
+
+.navbar-burger{
+    color: var(--text) !important;
+    transition: var(--transition-speed);
+}
+
+a.navbar-item:hover{
+    background-color: var(--secondary) !important;
+}
+
+@media screen and (max-width: 1023px){
+    .switch{
+        margin-top: 1rem;
+    }
+}

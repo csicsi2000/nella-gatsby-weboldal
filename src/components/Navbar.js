@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { TransitionPortal } from "gatsby-plugin-transition-link";
+import { ThemeToggler } from "gatsby-plugin-dark-mode";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -33,70 +33,133 @@ const Navbar = class extends React.Component {
     );
   }
 
+  getDirection(target) {
+    console.log(window.location.pathname);
+
+    let currentLocation = window.location.pathname;
+    let pages = ["about", "blog", "contact"];
+
+    let currentIndex = 0;
+    let targetIndex = -1;
+
+    for (let i = 0; i < pages.length; i++) {
+      if (currentLocation.includes(pages[i])) {
+        currentIndex = i;
+      }
+      if (target.includes(pages[i])) {
+        targetIndex = i;
+      }
+    }
+
+    if (currentIndex > targetIndex) {
+      console.log("left");
+      return "left";
+    } else if (targetIndex > currentIndex) {
+      console.log("right");
+
+      return "right";
+    } else {
+      return "Top";
+    }
+  }
+
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            {
-            /* <AniLink paintDrip duration={0.5} hex="fff5db" to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </AniLink> */
-            }
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              role="menuitem"
-              tabIndex={0}
-              onKeyPress={() => this.toggleHamburger()}
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
+      <TransitionPortal>
+        <nav
+          className="navbar is-transparent"
+          role="navigation"
+          aria-label="main-navigation"
+          onWindowScroll="handleScroll()"
+        >
+          <div className="container">
+            <div className="navbar-brand">
+              {/* Hamburger menu */}
+              <div
+                className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+                data-target="navMenu"
+                role="menuitem"
+                tabIndex={0}
+                onKeyPress={() => this.toggleHamburger()}
+                onClick={() => this.toggleHamburger()}
               >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+            <div
+              id="navMenu"
+              className={`navbar-menu ${this.state.navBarActiveClass}`}
+            >
+              <div className="navbar-start has-text-centered">
+                <AniLink
+                  cover
+                  direction={this.getDirection("/")}
+                  duration={0.3}
+                  bg="var(--secondary)"
+                  className="navbar-item"
+                  to="/"
+                >
+                  Home
+                </AniLink>
+                <AniLink
+                  cover
+                  direction={this.getDirection("/about")}
+                  duration={0.3}
+                  bg="var(--secondary)"
+                  className="navbar-item"
+                  to="/about"
+                >
+                  About
+                </AniLink>
+                <AniLink
+                  cover
+                  direction={this.getDirection("/blog")}
+                  duration={0.3}
+                  bg="var(--secondary)"
+                  className="navbar-item"
+                  to="/blog"
+                >
+                  Blog
+                </AniLink>
+                <AniLink
+                  cover
+                  direction={this.getDirection("/contact")}
+                  duration={0.3}
+                  bg="var(--secondary)"
+                  className="navbar-item"
+                  to="/contact"
+                >
+                  Contact
+                </AniLink>
+                <Link className="navbar-item" to="/contact/examples">
+                  Form Examples
+                </Link>
+              </div>
+              <div className="navbar-end has-text-centered">
+                <ThemeToggler>
+                  {({ theme, toggleTheme }) => (
+                    <div class="center-child">
+                      <label class="switch">
+                        <input
+                          class="dark-toggle"
+                          type="checkbox"
+                          onChange={(e) =>
+                            toggleTheme(e.target.checked ? "dark" : "light")
+                          }
+                          checked={theme === "dark"}
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  )}
+                </ThemeToggler>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </TransitionPortal>
     );
   }
 };
