@@ -34,7 +34,10 @@ const Navbar = class extends React.Component {
   }
 
   getDirection(target) {
-    console.log(window.location.pathname);
+    const isBrowser = typeof window !== "undefined";
+    if (!isBrowser) {
+      return;
+    }
 
     let currentLocation = window.location.pathname;
     let pages = ["about", "blog", "contact"];
