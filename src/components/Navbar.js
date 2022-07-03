@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import logo from "../img/logo.svg";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { TransitionPortal } from "gatsby-plugin-transition-link";
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
@@ -71,20 +70,10 @@ const Navbar = class extends React.Component {
           className="navbar is-transparent"
           role="navigation"
           aria-label="main-navigation"
+          onWindowScroll="handleScroll()"
         >
           <div className="container">
             <div className="navbar-brand">
-              <AniLink
-                cover
-                direction="left"
-                duration={0.5}
-                hex="fff5db"
-                to="/"
-                className="navbar-item"
-                title="Logo"
-              >
-                <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-              </AniLink>
               {/* Hamburger menu */}
               <div
                 className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -106,8 +95,19 @@ const Navbar = class extends React.Component {
               <div className="navbar-start has-text-centered">
                 <AniLink
                   cover
+                  direction={this.getDirection("/")}
+                  duration={0.3}
+                  bg="var(--secondary)"
+                  className="navbar-item"
+                  to="/"
+                >
+                  Home
+                </AniLink>
+                <AniLink
+                  cover
                   direction={this.getDirection("/about")}
-                  duration={0.5}
+                  duration={0.3}
+                  bg="var(--secondary)"
                   className="navbar-item"
                   to="/about"
                 >
@@ -116,7 +116,8 @@ const Navbar = class extends React.Component {
                 <AniLink
                   cover
                   direction={this.getDirection("/blog")}
-                  duration={0.5}
+                  duration={0.3}
+                  bg="var(--secondary)"
                   className="navbar-item"
                   to="/blog"
                 >
@@ -125,7 +126,8 @@ const Navbar = class extends React.Component {
                 <AniLink
                   cover
                   direction={this.getDirection("/contact")}
-                  duration={0.5}
+                  duration={0.3}
+                  bg="var(--secondary)"
                   className="navbar-item"
                   to="/contact"
                 >
@@ -138,17 +140,17 @@ const Navbar = class extends React.Component {
               <div className="navbar-end has-text-centered">
                 <ThemeToggler>
                   {({ theme, toggleTheme }) => (
-                    <div class="toggle-switch">
-                      <label class="toggle">
-                      <input
-                        class="dark-toggle"
-                        type="checkbox"
-                        onChange={(e) =>
-                          toggleTheme(e.target.checked ? "dark" : "light")
-                        }
-                        checked={theme === "dark"}
-                      />
-                      <span class = 'slider'></span>
+                    <div class="center-child">
+                      <label class="switch">
+                        <input
+                          class="dark-toggle"
+                          type="checkbox"
+                          onChange={(e) =>
+                            toggleTheme(e.target.checked ? "dark" : "light")
+                          }
+                          checked={theme === "dark"}
+                        />
+                        <span class="slider round"></span>
                       </label>
                     </div>
                   )}
