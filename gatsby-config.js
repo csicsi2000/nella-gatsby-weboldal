@@ -5,14 +5,23 @@ module.exports = {
       "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
   },
   plugins: [
-    // `gatsby-plugin-transition-link`,
+    `gatsby-plugin-transition-link`,
+    "gatsby-plugin-transition-link",
+    /*
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/components/Layout.js`),
+      },
+    },*/
+    "gatsby-plugin-dark-mode",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
       options: {
-        sassOptions: {
-          indentedSyntax: true,
-        },
+       // sassOptions: {
+       //   indentedSyntax: true,
+       // },
       },
     },
     {
@@ -77,8 +86,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
       options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
+        develop: false, // Activates purging in npm run develop
+        purgeOnly: ["/all.css"], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array
