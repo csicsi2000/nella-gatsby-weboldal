@@ -21,8 +21,14 @@ $black: #2b2523;
   align-items: center;
 }
 
+body{
+  min-height: 100vh;
+}
+
 
 .navbar {
+  position: fixed !important;
+  top: 0px !important;
   width: 100vw;
 }
 

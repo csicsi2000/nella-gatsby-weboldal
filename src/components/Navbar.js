@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { TransitionPortal } from "gatsby-plugin-transition-link";
+//import { TransitionPortal } from "gatsby-plugin-transition-link";
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
 
 const Navbar = class extends React.Component {
@@ -65,7 +65,7 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <TransitionPortal>
+      //<TransitionPortal>
         <nav
           className="navbar is-transparent"
           role="navigation"
@@ -159,7 +159,7 @@ const Navbar = class extends React.Component {
             </div>
           </div>
         </nav>
-      </TransitionPortal>
+      //</TransitionPortal>
     );
   }
 };
