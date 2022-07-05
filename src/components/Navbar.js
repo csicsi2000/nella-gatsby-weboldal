@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { TransitionPortal } from "gatsby-plugin-transition-link";
+//import { TransitionPortal } from "gatsby-plugin-transition-link";
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
 
 const Navbar = class extends React.Component {
@@ -34,41 +34,38 @@ const Navbar = class extends React.Component {
   }
 
   getDirection(target) {
-    const isBrowser = typeof window !== "undefined";
-    if (!isBrowser) {
-      return;
-    }
+    if (typeof window !== `undefined`) {
+      let currentLocation = window.location.pathname;
+      let pages = ["about", "blog", "contact"];
 
-    let currentLocation = window.location.pathname;
-    let pages = ["about", "blog", "contact"];
+      let currentIndex = 0;
+      let targetIndex = -1;
 
-    let currentIndex = 0;
-    let targetIndex = -1;
-
-    for (let i = 0; i < pages.length; i++) {
-      if (currentLocation.includes(pages[i])) {
-        currentIndex = i;
+      for (let i = 0; i < pages.length; i++) {
+        if (currentLocation.includes(pages[i])) {
+          currentIndex = i;
+        }
+        if (target.includes(pages[i])) {
+          targetIndex = i;
+        }
       }
-      if (target.includes(pages[i])) {
-        targetIndex = i;
+
+      if (currentIndex > targetIndex) {
+        console.log("left");
+        return "left";
+      } else if (targetIndex > currentIndex) {
+        console.log("right");
+
+        return "right";
+      } else {
+        return "Top";
       }
-    }
-
-    if (currentIndex > targetIndex) {
-      console.log("left");
-      return "left";
-    } else if (targetIndex > currentIndex) {
-      console.log("right");
-
-      return "right";
-    } else {
-      return "Top";
     }
   }
 
   render() {
     return (
-      <TransitionPortal>
+      //<TransitionPortal>
         <nav
           className="navbar is-transparent"
           role="navigation"
@@ -162,7 +159,7 @@ const Navbar = class extends React.Component {
             </div>
           </div>
         </nav>
-      </TransitionPortal>
+      //</TransitionPortal>
     );
   }
 };
