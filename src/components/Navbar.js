@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 //import { TransitionPortal } from "gatsby-plugin-transition-link";
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
@@ -133,9 +132,6 @@ const Navbar = class extends React.Component {
                 >
                   Contact
                 </AniLink>
-                <Link className="navbar-item" to="/contact/examples">
-                  Form Examples
-                </Link>
               </div>
               <div className="navbar-end has-text-centered">
                 <ThemeToggler>
@@ -146,7 +142,7 @@ const Navbar = class extends React.Component {
                           class="dark-toggle"
                           type="checkbox"
                           onChange={(e) =>
-                            toggleTheme(e.target.checked ? "dark" : "light")
+                            toggleTheme(e.target.checked ? "dark" : "light") 
                           }
                           checked={theme === "dark"}
                         />
