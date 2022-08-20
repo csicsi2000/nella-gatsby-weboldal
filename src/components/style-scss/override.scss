@@ -5,17 +5,18 @@ body {
     transition: var(--transition-speed);
 }
 
-h1,
-h2,
-h3,
-h4{
+.button{
     background-color: var(--background) !important;
     transition: var(--transition-speed);
     color: var(--text) !important;
 }
 
 label,
-p{
+p,
+h1,
+h2,
+h3,
+h4{
     transition: var(--transition-speed);
     color: var(--text) !important;
 }
