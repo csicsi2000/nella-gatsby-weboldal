@@ -8,9 +8,14 @@ body {
 h1,
 h2,
 h3,
-h4,
-label {
+h4{
     background-color: var(--background) !important;
+    transition: var(--transition-speed);
+    color: var(--text) !important;
+}
+
+label,
+p{
     transition: var(--transition-speed);
     color: var(--text) !important;
 }

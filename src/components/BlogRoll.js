@@ -47,7 +47,7 @@ class BlogRollTemplate extends React.Component {
                     >
                       {post.frontmatter.title}
                     </AniLink>
-                    <span> &bull; </span>
+                    <span style={{color:"transparent"}}> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
                       {post.frontmatter.date}
                     </span>

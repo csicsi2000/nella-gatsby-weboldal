@@ -173,8 +173,8 @@ $menu-label-color: $white-ter;
 }
 
 // blog roll
-.blog-list-item.is-featured {
-  background-color: var(--secondary);
+.blog-list-item {
+  background-color: var(--secondary) !important;
 }
 
 .blog-list-item header {
