@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function FullWidthImage(props) {
   const {
@@ -10,14 +9,6 @@ export default function FullWidthImage(props) {
     subheading,
     imgPosition = "top left",
   } = props;
-
-  const logo = document.querySelectorAll('#svg-nev path');
-
-  console.log(logo);
-
-  for (let i = 0; i < logo.length; i++) {
-    console.log(`Letter ${i} is ${logo[i].getTotalLength()}`)
-  }
 
   return (
     <React.Fragment>
