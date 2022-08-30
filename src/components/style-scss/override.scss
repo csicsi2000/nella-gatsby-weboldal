@@ -8,10 +8,15 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+feed {
     background-color: var(--background) !important;
     transition: var(--transition-speed);
     color: var(--text) !important;
+}
+
+iframe{
+    max-width: 100%;
 }
 
 a {
@@ -40,6 +45,7 @@ a:hover {
 a.navbar-item:hover{
     background-color: var(--secondary) !important;
 }
+
 
 @media screen and (max-width: 1023px){
     .switch{

@@ -36,6 +36,11 @@ body{
   min-height: 3rem;
 }
 
+.navbar-menu{
+  transition: 0.5s;
+  opacity: 1;
+}
+
 .navbar .navbar-menu {
   box-shadow: none !important;
   transition: 0.5s;
@@ -168,8 +173,10 @@ $menu-label-color: $white-ter;
 }
 
 // blog roll
-.blog-list-item.is-featured {
-  background-color: var(--secondary);
+.blog-list-item {
+  transition: 0.3s;
+  color: var(--text) !important;
+  background-color: var(--theme) !important;
 }
 
 .blog-list-item header {
@@ -180,6 +187,10 @@ $menu-label-color: $white-ter;
 .blog-list-item .featured-thumbnail {
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
+}
+
+.blog-list-btn{
+  background-color: var(--secondary) !important;
 }
 
 
@@ -203,6 +214,8 @@ $menu-label-color: $white-ter;
   }
 }
 
+
+
 @include mobile {
   .blog-list-item header {
     display: block;
@@ -210,7 +223,9 @@ $menu-label-color: $white-ter;
 
   .blog-list-item .featured-thumbnail {
     text-align: center;
-    max-width: 70%;
+    max-width: 100%;
+    max-height: 10rem;
     margin: 0 0 1em;
   }
 }
+
