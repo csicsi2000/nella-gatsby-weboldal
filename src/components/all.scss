@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 @import "./style-scss/dark-toggle.scss";
 @import "./style-scss/override.scss";
+@import "./style-scss/home.scss";
 
 // Config vars
 // Kaldi logo brand color: #FD461E
@@ -128,6 +129,11 @@ body{
   fill: currentColor;
 }
 
+.middle-content{
+  max-width: 30rem;
+  margin: auto;
+}
+
 .navbar-brand .navbar-item.logo {
   padding: 0 1rem;
 }
@@ -174,9 +180,12 @@ $menu-label-color: $white-ter;
 
 // blog roll
 .blog-list-item {
+
   transition: 0.3s;
   color: var(--text) !important;
   background-color: var(--theme) !important;
+  background-color: var(--secondary) !important;
+
 }
 
 .blog-list-item header {
