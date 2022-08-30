@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
@@ -52,9 +53,16 @@ export const IndexPageTemplate = ({
                     </h3>
                     <BlogRoll />
                     <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
+                      <AniLink
+                        cover
+                        direction="up"
+                        duration={0.3}
+                        bg="var(--secondary)"
+                        className="btn"
+                        to="/blog"
+                      >
                         Read more
-                      </Link>
+                      </AniLink>
                     </div>
                   </div>
                 </div>
