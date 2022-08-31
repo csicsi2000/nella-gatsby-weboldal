@@ -180,22 +180,26 @@ $menu-label-color: $white-ter;
 
 // blog roll
 .blog-list-item {
-
   transition: 0.3s;
   color: var(--text) !important;
   background-color: var(--theme) !important;
   background-color: var(--secondary) !important;
-
+  padding: auto !important;
 }
 
 .blog-list-item header {
-  display: flex;
   margin-bottom: 1em;
 }
 
+.featured-thumbnail{
+  display: flex;
+  justify-content: center;
+  height: 14rem;
+}
+
 .blog-list-item .featured-thumbnail {
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  margin-bottom: 1.5em;
+  padding: auto !important;
 }
 
 .blog-list-btn{

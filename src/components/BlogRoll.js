@@ -14,7 +14,7 @@ class BlogRollTemplate extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
-                                <AniLink
+              <AniLink
                     cover
                     direction="up"
                     duration={0.3}
@@ -104,7 +104,7 @@ export default function BlogRoll() {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 120
+                        width: 500
                         quality: 100
                         layout: CONSTRAINED
                       )
