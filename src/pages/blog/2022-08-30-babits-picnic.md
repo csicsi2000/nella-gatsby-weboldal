@@ -17,7 +17,7 @@ The main theme for the event are the dotted clothesm because it was Török Szof
 
 "Babits Mihály: The book of Jonas" was performed by 
 
-* **Báhner Péter** as Babits Mihály
-* [](<>)**Gabi Kéner** as Török Sophie
+* Báhner Péter as Babits Mihály
+* [](<>)Gabi Kéner as Török Sophie
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/kJfmmNudBQQ" title="Babits Piknik 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
